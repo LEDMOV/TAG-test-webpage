@@ -28,16 +28,3 @@ logoutButton.addEventListener('click', async () => {
         console.error("Error logging out:", error.message);
     }
 });
-
-// Track authentication state
-onAuthStateChanged(auth, user => {
-    if (user) {
-        userStatus.textContent = `Welcome, ${user.email}`;
-        logoutButton.style.display = 'block';
-        loginForm.style.display = 'none';
-    } else {
-        userStatus.textContent = 'Not logged in';
-        logoutButton.style.display = 'none';
-        loginForm.style.display = 'block';
-    }
-});
